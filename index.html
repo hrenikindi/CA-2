@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake And Ladders</title>
+</head>
+<body>
+    <link rel="stylesheet" href="start.css">
+    <div class="game-logo">
+        <img src="./assets/logo.png" alt="Game Logo" id="logo-img"/>
+        <button onclick="ask()" id="start">Start Game</button>
+    </div>
+    <!--Instrcrions PopUp-->
+    <div class="box" id="inst">
+        <div class="content">
+
+            <span class="close">&times;</span><br/>
+            <h2>Instructions: How to Play?</h2>
+            <p>The game is simple and easy to understand.</p>
+            <ol type="1">
+                <li>When you click on continue you will go to game page.</li>
+                <li>Players need to roll the dice in-order to play the game[Dice will have numbers from  1 -6].</li>
+                <li>Then roll the dice by clicking on "Roll Dice". You can see the number on it in real time.</li>
+                <li>When player gets 6 on the roll he gets the 2nd chance to roll the dice,else the other player gets a chance to play</li>
+                <li>At few tiles the board will have snake or ladder, when ladder present player goes up in the board</li>
+                <li>When Snake is there then player comes back to the tip of the snake</li>
+                <li>The player who reaches the top first will be the winner</li>
+            </ol>
+            <button id="contd">continue</button>
+        </div>
+    </div>
+    <script src="start.js"></script>
+</body>
+</html>
