@@ -1,142 +1,152 @@
-let tog = 1
-let rollingSound = new Audio('./assets/rpg-dice-rolling-95182.mp3')
-let winSound = new Audio('./assets/winharpsichord-39642.mp3')
+let turn = 1
+let diceSound = new Audio('./assets/rpg-dice-rolling-95182.mp3')
+let celebrations = new Audio('./assets/win.mp3')
+let playerMoveSound = new Audio('./assets/move.mp3');
+let backGround = new Audio('./assets/backgound.mp3');
+let player1moves = 0
+let player2moves = 0
+backGround.volume=0.7;
+backGround.play();
 
-let p1sum = 0
-let p2sum = 0
-
-function play(player, psum, correction, num) {
-    let sum
+// Function to move the players on the board
+function play(player, playerSum, correction, num) {
+    let currentMove
     //Snake and Ladder Logic
-    if (psum == 'p1sum') 
+    if (playerSum == 'player1moves') 
     {
 
-        p1sum = p1sum + num
+        player1moves = player1moves + num
 
-        if (p1sum > 100) {
-            p1sum = p1sum - num
+        if (player1moves > 100) {
+            player1moves = player1moves - num
         }
-        if (p1sum == 1) {
-            p1sum = 38
+        if (player1moves == 1) {
+            player1moves = 38
         }
-        if (p1sum == 4) {
-            p1sum = 14
+        if (player1moves == 4) {
+            player1moves = 14
         }
-        if (p1sum == 8) {
-            p1sum = 30
+        if (player1moves == 9 ) {
+            player1moves = 31
         }
-        if (p1sum == 21) {
-            p1sum = 42
+        if(player1moves == 17){
+            player1moves=7
         }
-        if (p1sum == 28) {
-            p1sum = 76
+        if (player1moves == 21) {
+            player1moves = 42
         }
-        if (p1sum == 32) {
-            p1sum = 10
+        if (player1moves == 28) {
+            player1moves = 84
         }
-        if (p1sum == 36) {
-            p1sum = 6
+        if (player1moves == 54) {
+            player1moves = 34
         }
-        if (p1sum == 48) {
-            p1sum = 26
+        if (player1moves == 62) {
+            player1moves = 19
         }
-        if (p1sum == 50) {
-            p1sum = 67
+        if (player1moves == 64) {
+            player1moves = 60
         }
-        if (p1sum == 62) {
-            p1sum = 18
+        if (player1moves == 51) {
+            player1moves = 67
         }
-        if (p1sum == 71) {
-            p1sum = 92
+        if (player1moves == 87) {
+            player1moves = 24
         }
-        if (p1sum == 80) {
-            p1sum = 99
+        if (player1moves == 71) {
+            player1moves = 91
         }
-        if (p1sum == 88) {
-            p1sum = 24
+        if (player1moves == 80) {
+            player1moves = 100
         }
-        if (p1sum == 95) {
-            p1sum = 56
+        if (player1moves == 93) {
+            player1moves = 73
         }
-        if (p1sum == 97) {
-            p1sum = 78
+        if (player1moves == 95) {
+            player1moves = 75
         }
-        sum = p1sum
+        if (player1moves == 98) {
+            player1moves = 79
+        }
+        currentMove = player1moves
     }
 
-    if (psum == 'p2sum') {
+    if (playerSum == 'player2moves') {
 
-        p2sum = p2sum + num
+        player2moves = player2moves + num
 
-        if (p2sum > 100) {
-            p2sum = p2sum - num
-        }        
-
-        if (p2sum == 1) {
-            p2sum = 38
+        if (player2moves > 100) {
+            player2moves = player1moves - num
         }
-        if (p2sum == 4) {
-            p2sum = 14
+        if (player2moves == 1) {
+            player2moves = 38
         }
-        if (p2sum == 8) {
-            p2sum = 30
+        if (player2moves == 4) {
+            player2moves = 14
         }
-        if (p2sum == 21) {
-            p2sum = 42
+        if (player2moves == 9 ) {
+            player2moves = 31
         }
-        if (p2sum == 28) {
-            p2sum = 76
+        if(player2moves == 17){
+            player2moves = 7
         }
-        if (p2sum == 32) {
-            p2sum = 10
+        if (player2moves == 21) {
+            player2moves = 42
         }
-        if (p2sum == 36) {
-            p2sum = 6
+        if (player2moves == 28) {
+            player2moves = 84
         }
-        if (p2sum == 48) {
-            p2sum = 26
+        if (player2moves == 54) {
+            player2moves = 34
         }
-        if (p2sum == 50) {
-            p2sum = 67
+        if (player2moves == 62) {
+            player2moves = 19
         }
-        if (p2sum == 62) {
-            p2sum = 18
+        if (player2moves == 64) {
+            player2moves = 60
         }
-        if (p2sum == 71) {
-            p2sum = 92
+        if (player2moves == 51) {
+            player2moves = 67
         }
-        if (p2sum == 80) {
-            p2sum = 99
+        if (player2moves == 87) {
+            player2moves = 24
         }
-        if (p2sum == 88) {
-            p2sum = 24
+        if (player2moves == 71) {
+            player2moves = 91
         }
-        if (p2sum == 95) {
-            p2sum = 56
+        if (player2moves == 80) {
+            player2moves = 100
         }
-        if (p2sum == 97) {
-            p2sum = 78
+        if (player2moves == 93) {
+            player2moves = 73
         }
-
-        sum = p2sum
-
-
-
+        if (player2moves == 95) {
+            player2moves = 75
+        }
+        if (player2moves == 98) {
+            player2moves = 79
+        }
+        currentMove = player2moves
     }
+    setTimeout(function(){
+        playerMoveSound.volume=0.7;
+        playerMoveSound.play();
+    },500)
+    
+    
     document.getElementById(`${player}`).style.transition = `linear all .5s`
-
-    if (sum < 10) {
-        document.getElementById(`${player}`).style.left = `${(sum - 1) * 62}px`;
+    if (currentMove < 10) {
+        document.getElementById(`${player}`).style.left = `${(currentMove - 1) * 62}px`;
         document.getElementById(`${player}`).style.top = `${-0 * 62 - correction}px`;
-    } else if (sum === 100) {
-        winSound.play();
+    } else if (currentMove === 100) {
+        celebrations.play();
         if (player === 'p1') {
             displayGameOverMessage('p1');
         } else if (player === 'p2') {
             displayGameOverMessage('p2');
         }
     } else {
-        numarr = Array.from(String(sum));
+        numarr = Array.from(String(currentMove));
         n1 = eval(numarr.shift());
         n2 = eval(numarr.pop());
 
@@ -168,44 +178,39 @@ const winningPhrases = [
     "You've triumphed! Great job!"
 ];
 
-const losingPhrases = [
-    "Better luck next time!",
-    "Don't worry, try again!",
-    "It's okay, keep playing!",
-    "Keep your spirits up! You can do it!",
-    "Stay determined! The next game is yours!"
-];
-
 // Function to display game over message
 function displayGameOverMessage(player) {
     let message;
     if (player === 'p1') {
         message = winningPhrases[Math.floor(Math.random() * winningPhrases.length)];
     } else if (player === 'p2') {
-        message = losingPhrases[Math.floor(Math.random() * losingPhrases.length)];
+        message = winningPhrases[Math.floor(Math.random() * winningPhrases.length)];
     }
-    alert(message);
+    alert(message+player+" "+'won!');
     location.reload(); // Reload the game after displaying the message
 }
 
 
 document.getElementById("diceButton").addEventListener("click", function () {
-    rollingSound.play()
+    setTimeout(function(){
+        diceSound.volume=0.6;
+        diceSound.play()
+    },100)
     num = Math.floor(Math.random() * (6 - 1 + 1) + 1)
     document.getElementById("dice").innerText = num
 
-    if (tog % 2 != 0) {
+    if (turn % 2 != 0) {
         document.getElementById('toggle').innerText = "Yellow's Turn : "
-        play('p1', 'p1sum', 0, num)
+        play('p1', 'player1moves', 0, num)
 
     }
 
-    else if (tog % 2 == 0) {
+    else if (turn % 2 == 0) {
         document.getElementById('toggle').innerText = "Red's Turn : "
 
-        play('p2', 'p2sum', 55, num)
+        play('p2', 'player2moves', 55, num)
 
     }
 
-    tog = tog + 1
+    turn+=1
 })
