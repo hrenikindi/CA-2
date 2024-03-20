@@ -73,3 +73,34 @@ body{
 #contd:hover{
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;;
 }
+
+@media(max-width:768px){
+    .game-logo{
+        text-align: center;
+        cursor: pointer;
+    }
+    .game-logo img{
+        display: block;
+        width: 60vw;
+        height: auto;
+        transition: 0.2s;
+        max-width: 500px;
+    }
+    .game-logo #start{
+        display: block;
+        font-size: 1em;
+        color:rgb(255, 1, 1);
+        text-decoration: none;
+        background: rgba(0,0,40,0);
+        transition: 0.4s;
+        margin-top: 10px;
+        border-radius: 3px;
+        margin-left: 15px;
+       
+    }
+    .game-logo:hover #start{  
+        color:white;
+        text-shadow:2px 5px 0 black;
+        background:red;
+      }
+}
