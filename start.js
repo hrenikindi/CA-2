@@ -1,6 +1,6 @@
 const s = document.getElementById('start');
 const m = document.getElementById('inst');
-const cls = document.getElementsByClassName('close')[0];
+const close = document.getElementsByClassName('close')[0];
 const continues = document.querySelector('#contd');
 
 s.addEventListener('click', function(e) {    
@@ -23,7 +23,7 @@ s.addEventListener('click', function(e) {
     }
 });
 
-cls.addEventListener('click',function(){
+close.addEventListener('click',function(){
     m.style.display="none";
 });
 
