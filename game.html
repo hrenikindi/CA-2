@@ -1,134 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snake and Ladders</title>
-    <link rel="stylesheet" href="./game.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guess the Movie Name</title>
+  <link rel="stylesheet" href="./game.css">
 </head>
-
-
 <body>
-
-    <h1>Snake and ladder</h1>
-
-    <div id="diceContainer">
-        <p id="toggle">Red's Turn : </p>
-        <p id="dice">0</p>
-        <button id="diceButton">RollDice</button>
+  <audio  id="bgm" autoplay loop>
+    <source src="./assets/backgound.mp3" type="audio/mpeg">
+  </audio>
+  <div class="container">
+    <h1>Guess the Movie Name</h1>
+    <div id="game-box">
+      <p id="movie-emojis"></p>
+      <input type="text" id="user-guess" placeholder="Enter your guess">
+      <button id="guess-btn">Give Guess</button>
     </div>
-
-
-    <div class="board">
-        <div class="cell" id="cell100"></div>
-        <div class="cell" id="cell99"></div>
-        <div class="cell" id="cell98"></div>
-        <div class="cell" id="cell97"></div>
-        <div class="cell" id="cell96"></div>
-        <div class="cell" id="cell95"></div>
-        <div class="cell" id="cell94"></div>
-        <div class="cell" id="cell93"></div>
-        <div class="cell" id="cell92"></div>
-        <div class="cell" id="cell91"></div>
-        <div class="cell" id="cell81"></div>
-        <div class="cell" id="cell82"></div>
-        <div class="cell" id="cell83"></div>
-        <div class="cell" id="cell84"></div>
-        <div class="cell" id="cell85"></div>
-        <div class="cell" id="cell86"></div>
-        <div class="cell" id="cell87"></div>
-        <div class="cell" id="cell88"></div>
-        <div class="cell" id="cell89"></div>
-        <div class="cell" id="cell90"></div>
-        <div class="cell" id="cell80"></div>
-        <div class="cell" id="cell79"></div>
-        <div class="cell" id="cell78"></div>
-        <div class="cell" id="cell77"></div>
-        <div class="cell" id="cell76"></div>
-        <div class="cell" id="cell75"></div>
-        <div class="cell" id="cell74"></div>
-        <div class="cell" id="cell73"></div>
-        <div class="cell" id="cell72"></div>
-        <div class="cell" id="cell71"></div>
-        <div class="cell" id="cell61"></div>
-        <div class="cell" id="cell62"></div>
-        <div class="cell" id="cell63"></div>
-        <div class="cell" id="cell64"></div>
-        <div class="cell" id="cell65"></div>
-        <div class="cell" id="cell66"></div>
-        <div class="cell" id="cell67"></div>
-        <div class="cell" id="cell68"></div>
-        <div class="cell" id="cell69"></div>
-        <div class="cell" id="cell70"></div>
-        <div class="cell" id="cell60"></div>
-        <div class="cell" id="cell59"></div>
-        <div class="cell" id="cell58"></div>
-        <div class="cell" id="cell57"></div>
-        <div class="cell" id="cell56"></div>
-        <div class="cell" id="cell55"></div>
-        <div class="cell" id="cell54"></div>
-        <div class="cell" id="cell53"></div>
-        <div class="cell" id="cell52"></div>
-        <div class="cell" id="cell51"></div>
-        <div class="cell" id="cell41"></div>
-        <div class="cell" id="cell42"></div>
-        <div class="cell" id="cell43"></div>
-        <div class="cell" id="cell44"></div>
-        <div class="cell" id="cell45"></div>
-        <div class="cell" id="cell46"></div>
-        <div class="cell" id="cell47"></div>
-        <div class="cell" id="cell48"></div>
-        <div class="cell" id="cell49"></div>
-        <div class="cell" id="cell50"></div>
-        <div class="cell" id="cell40"></div>
-        <div class="cell" id="cell39"></div>
-        <div class="cell" id="cell38"></div>
-        <div class="cell" id="cell37"></div>
-        <div class="cell" id="cell36"></div>
-        <div class="cell" id="cell35"></div>
-        <div class="cell" id="cell34"></div>
-        <div class="cell" id="cell33"></div>
-        <div class="cell" id="cell32"></div>
-        <div class="cell" id="cell31"></div>
-        <div class="cell" id="cell21"></div>
-        <div class="cell" id="cell22"></div>
-        <div class="cell" id="cell23"></div>
-        <div class="cell" id="cell24"></div>
-        <div class="cell" id="cell25"></div>
-        <div class="cell" id="cell26"></div>
-        <div class="cell" id="cell27"></div>
-        <div class="cell" id="cell28"></div>
-        <div class="cell" id="cell29"></div>
-        <div class="cell" id="cell30"></div>
-        <div class="cell" id="cell20"></div>
-        <div class="cell" id="cell19"></div>
-        <div class="cell" id="cell18"></div>
-        <div class="cell" id="cell17"></div>
-        <div class="cell" id="cell16"></div>
-        <div class="cell" id="cell15"></div>
-        <div class="cell" id="cell14"></div>
-        <div class="cell" id="cell13"></div>
-        <div class="cell" id="cell12"></div>
-        <div class="cell" id="cell11"></div>
-        <div class="cell" id="cell01">
-            <p id="p1"></p>
-            <p id="p2"></p>
-        </div>
-        <div class="cell" id="cell02"></div>
-        <div class="cell" id="cell03"></div>
-        <div class="cell" id="cell04"></div>
-        <div class="cell" id="cell05"></div>
-        <div class="cell" id="cell06"></div>
-        <div class="cell" id="cell07"></div>
-        <div class="cell" id="cell08"></div>
-        <div class="cell" id="cell09"></div>
-        <div class="cell" id="cell10"></div>
+    <div id="score-box">
+      <p>Score: <span id="score">0</span></p>
+      <div id="timer-display">Time left: <span id="timer">25</span> seconds</div>
     </div>
-
-    <img src="./assets/snake-ladder-board.png" alt="game_board">
+  </div>
+  <div class="endGameBox" id="endGameBox">
+    <h2>Game Over</h2>
+    <p id="dumbMsg"></p>
+    <p>Your final score: <span id="final-score"></span></p>
+    <button id="restart" onclick="resetGame()">Play Again</button>
+  </div>
+  <script src="./game.js"></script>
 </body>
-<script src="./game.js"></script>
-
 </html>
