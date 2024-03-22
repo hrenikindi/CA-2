@@ -1,0 +1,89 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: url('./assets/game-screen-background.jpg')  no-repeat fixed;
+  background-size: cover;
+}
+
+.container {
+  max-width: 700px;
+  margin: 50px auto;
+  text-align: center;
+  margin-top: 200px;
+}
+.container h1{
+  color: cornsilk;
+}
+
+#game-box {
+  margin-bottom: 20px;
+}
+#movie-emojis{
+  font-size: 70px;
+  width: 400px;
+  height: 100px;
+  margin-left: 150px;
+  background-color: white;
+  border: 5px solid gold;
+}
+input[type="text"] {
+  width: 60%;
+  padding: 10px;
+  margin-top: 10px;
+  color: green;
+}
+
+#guess-btn {
+  padding: 10px 20px;
+  background-color:yellowgreen;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#guess-btn:hover {
+  background-color: red;
+}
+
+#score-box {
+  margin-bottom: 50px;
+  width: 100px;
+  height: 100px;
+  border: 5px solid gray;
+  margin-left: 250px;
+  color: blue;
+  background-color: antiquewhite;
+  
+}
+
+.endGameBox {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border: 2px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin-top: 280px;
+}
+
+.endGameBox h2 {
+  margin-top: 0;
+}
+#restart {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  input[type="text"] {
+    width: 100%;
+  }
+}

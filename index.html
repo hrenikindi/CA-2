@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the movie names</title>
+</head>
+<body>
+    <link rel="stylesheet" href="./start.css">
+    <div class="game-logo">
+        <img src="./assets/logo.png" alt="Game Logo" id="logo-img"/>
+        <button onclick="ask()" id="start">Start Game</button>
+    </div>
+    <!--Instrcrions PopUp-->
+    <div class="box" id="inst">
+        <div class="content">
+
+            <span class="close">&times;</span><br/>
+            <h2>Instructions: How to Play?</h2>
+            <p>The game is simple and easy to understand.</p>
+            <ol type="1">
+                <li>When you click on continue you will go to game page.</li>
+                <li>You will be having a input box to enter your guess.</li>
+                <li>Emojis will be there and you need to guess the movie names based on the emojis displayed</li>
+                <li>When movie name you guessed is right then it will increase your score</li>
+                <li>When your guess is wrong game ends up and you will get a popup with game over messages</li>
+                <li>If You are interested u can play the game again by pressing play-again button</li>
+            </ol>
+            <button id="contd">continue</button>
+        </div>
+    </div>
+    <script src="start.js"></script>
+</body>
+</html>
