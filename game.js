@@ -1,4 +1,4 @@
-// Movie data
+// Movie data declared using objects
 const moviesData = [
     { name: "🦁👑", title: "The Lion King" },
     { name: "🔥🫂", title: "salaar" },
@@ -13,11 +13,11 @@ const moviesData = [
     
   ];
   
-  // Phrases
+  // Phrases intialization using arrays
   const winningWords = ["Congratulations!", "You're a movie genius!", "Well done!","Don't miss the game","Great Champ You are in Form"];
   const motivationPhrases = ["Better luck next time!", "Don't worry, try again!", "Almost there!","Try to score more in the game"];
   const dumbPhrases = ["Try Again!","You Lost the game before begenning","gain knowledge about movies","Get Lost"];
-  // DOM elements
+  
   let backGround = new Audio('./assets/backgound.mp3');
   let move = new Audio('./assets/move.mp3');
   let win= new Audio('./assets/win.mp3');
@@ -30,29 +30,23 @@ const moviesData = [
   const finalScr = document.getElementById("final-score");
   const playAgainButton = document.getElementById("restart");
 
-  
-  // Game state
   let score = 0;
   let currentMovieIndex = 0;
   let timer;
   
-  // Initialize game
   startGame();
-  
-  // Initialize game function
+
   function startGame() {
     backGround.play()
     backGround.volume=0.7;
     displayTitles();
     getSetGo();
   }
-  
-  // Display movie title function
+
   function displayTitles() {
     movieEmojis.textContent = moviesData[currentMovieIndex].name;
   }
-  
-  // Start timer function
+
   function getSetGo() {
     let timeLeft = 25;
     updateTimer(timeLeft);
@@ -71,9 +65,7 @@ const moviesData = [
     const timerDisplay = document.getElementById("timer");
     timerDisplay.textContent = timeLeft;
   }
-  
-  
-  // Submit button click event
+
   guessButton.addEventListener("click", () => {
     const userGuess = userGuesses.value.trim().toLowerCase();
     const correctAnswer = moviesData[currentMovieIndex].title.toLowerCase();
@@ -98,12 +90,11 @@ const moviesData = [
       clearInterval(timer);
     }
   });
-  
-  // End game function
+
   function endGame() {
     let message = "";
     if (score === 10) {
-        const randomIndex = Math.floor(Math.random() * winningWords.length);
+        const randomIndex = Math.floor(Math.random() * winningWords.length); // Displaying Arrays Using Random Functions[for index value of Arrays]
         message = winningWords[randomIndex];
     } else if (score < 10 && score > 0) {
         const randomIndex = Math.floor(Math.random() * motivationPhrases.length);
@@ -120,6 +111,3 @@ const moviesData = [
     window.location.reload();
   }
   playAgainButton.addEventListener("click", resetGame);
-
-  
-  
