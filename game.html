@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guess the Movie Name</title>
+  <link rel="stylesheet" href="./game.css">
+</head>
+<body>
+  <audio  id="bgm" autoplay loop>
+    <source src="./assets/backgound.mp3" type="audio/mpeg">
+  </audio>
+  <div class="container">
+    <h1>Guess the Movie Name</h1>
+    <div id="game-box">
+      <p id="movie-emojis"></p>
+      <input type="text" id="user-guess" placeholder="Enter your guess">
+      <button id="guess-btn">Give Guess</button>
+    </div>
+    <div id="score-box">
+      <p>Score: <span id="score">0</span></p>
+      <div id="timer-display">Time left: <span id="timer">25</span> seconds</div>
+    </div>
+  </div>
+  <div class="endGameBox" id="endGameBox">
+    <h2>Game Over</h2>
+    <p id="dumbMsg"></p>
+    <p>Your final score: <span id="final-score"></span></p>
+    <button id="restart" onclick="resetGame()">Play Again</button>
+  </div>
+  <script src="./game.js"></script>
+</body>
+</html>
