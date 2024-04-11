@@ -9,8 +9,7 @@ s.addEventListener('click', function(e) {
         let nickname = prompt('Enter nick-name:');
         if (nickname) {
             alert("Great! Let's start the game!"+" "+nickname);
-            s.style.display = "none"; // Hide starting message
-            // Open the instructions page as a popup
+            s.style.display = "none"; 
             m.style.display='block';
             continues.addEventListener('click',function(){
                 window.location.href='./game.html';
